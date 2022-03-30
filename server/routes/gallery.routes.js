@@ -6,7 +6,7 @@ const Image = require ('./../models/Image.model')
 router.get('/getAllImages', (req, res) =>{
     
     Image
-        .find
+        .find()
         .select ('title imageUrl')
         .then (response =>  res.json (response))
         .catch (err => res.status (500).json(err))
@@ -19,7 +19,7 @@ router.get('/getOneImage/:image_id', (req, res,) =>{
     const {image_id} = req.params
 
     Image
-        .findById
+        .findById (image_id)
         .then (response =>  res.json (response))
         .catch (err => res.status (500).json(err))
 })
@@ -52,8 +52,10 @@ router.put ('/modifyImage', (req, res) =>{
 
 router.delete ('/deleteImage', (req, res) =>{
 
+    const {image_id} = req.params
+
     Image
-        .findByIdAndDelete
+        .findByIdAndDelete (image_id)
         .then (response =>  res.json (response))
         .catch (err => res.status (500).json(err))
 })
