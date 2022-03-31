@@ -1,0 +1,29 @@
+.navbar{
+    background-color: #edf5f5;
+    padding: 21px;
+    margin: -8px;
+}
+.title{
+    font-family:'Baloo Da 2';
+    text-decoration: none;
+    color: #6ec6ca;
+    text-transform: uppercase;
+    font-size:xx-large;
+    margin-top: -12px;
+}
+.me-auto{
+    font-family:'Quattrocento Sans';
+    text-decoration: none;
+    color: #6ec6ca;
+    
+}
+
+.A{
+    padding-right: 30px;
+
+}
+.line{
+    margin-left: 1240px;
+    margin-top: -40px;
+    
+}

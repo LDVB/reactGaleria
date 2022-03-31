@@ -1,0 +1,16 @@
+.footer{
+    position: absolute;
+    background-color: #edf5f5;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width:99% ;
+
+   
+}
+.me{
+    font-family:'Quattrocento Sans';
+    text-decoration: none;
+    color: #6ec6ca;
+    
+}
