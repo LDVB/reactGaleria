@@ -1,5 +1,5 @@
 import "./Navigation.css"
-import { Navbar, Container, Nav } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavLink } from 'react-bootstrap'
 
 const Navigation = () => {
 
@@ -7,10 +7,14 @@ const Navigation = () => {
         <>
             <Navbar className="navbar">
                 <Container>
-                    <Navbar.Brand href="#home" className="title ">Galeria de Imagenes</Navbar.Brand>
+                    <Navbar.Brand as='span' className="title ">Galeria de Imagenes</Navbar.Brand>
                     <Nav className="line">
-                        <Nav.Link href="#home" className="me-auto A">Home</Nav.Link>
-                        <Nav.Link href="#features" className="me-auto B">Añadir Imagen</Nav.Link>
+                        <NavLink to='/'>
+                            <Nav.Link as='span' className="me-auto A">Home</Nav.Link>
+                        </NavLink>
+                        <NavLink to='/nuevaImagen'>
+                            <Nav.Link href="#features" className="me-auto B">Añadir Imagen</Nav.Link>
+                        </NavLink>
                     </Nav>
                 </Container>
             </Navbar>
