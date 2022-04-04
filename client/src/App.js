@@ -1,7 +1,7 @@
 import './App.css';
 import Footer from './components/Footer/Footer';
-import Gallery from './components/Gallery/Gallery';
 import Navigation from './components/Navigation/Navigation';
+import Gallery from './pages/GalleryPages';
 
 function App() {
   return (
