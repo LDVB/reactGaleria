@@ -1,0 +1,101 @@
+.name2{
+    margin-top: 10px;
+    margin-left: 25px;
+    font-family:'Quattrocento Sans';
+    font-style: oblique;
+    text-transform: capitalize;
+    font-size: medium;
+}
+
+.photo{
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    padding-bottom: 19px;
+    margin-left: 570px;
+    margin-bottom: 10px;
+}
+
+.Button{
+
+    font-family:'Quattrocento Sans';
+    min-width: 120px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: .1px;
+    outline: none;
+    border:none;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #6ec6ca;
+    background-color: transparent;
+    color:#1d3030;
+    transition: all 200ms ease-in-out;
+    margin-top: 15px;
+    margin-right: 25px;
+    margin-left: 25px;
+
+}
+.Edit {
+    box-shadow: 0 0 0 2px #69d865;
+    font-family:'Quattrocento Sans';
+    min-width: 120px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: .1px;
+    outline: none;
+    border:none;
+    border-radius: 2px;
+    background-color: transparent;
+    color:#1d3030;
+    transition: all 200ms ease-in-out;
+    margin-top: 15px;
+    margin-right: 25px;
+    margin-left: 25px;
+    
+}
+.Delete  {
+
+    box-shadow: 0 0 0 2px #e75252;
+    font-family:'Quattrocento Sans';
+    min-width: 120px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: .1px;
+    outline: none;
+    border:none;
+    border-radius: 2px;
+    background-color: transparent;
+    color:#1d3030;
+    transition: all 200ms ease-in-out;
+    margin-top: 15px;
+    margin-right: 25px;
+    margin-left: 25px;
+
+}
+
+.Edit {
+    box-shadow: 0 0 0 2px #69d865;
+    font-family:'Quattrocento Sans';
+    min-width: 120px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: .1px;
+    outline: none;
+    border:none;
+    border-radius: 2px;
+    background-color: transparent;
+    color:#1d3030;
+    transition: all 200ms ease-in-out;
+    margin-top: 15px;
+    margin-right: 25px;
+    margin-left: 25px;
+    
+}
+
+.space{
+    margin-top: -378px;
+}

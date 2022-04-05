@@ -14,7 +14,7 @@ const ImageCard = ({imageUrl, title, _id}) => {
         <Card.Body>
             <Card.Title className="Name">{title}</Card.Title>
             <Link to={`/detallesImagen/${_id}`}>
-            <Button className=" Detalles ">Ver detalles</Button>
+            <Button className="Button ">Ver detalles</Button>
             </Link>
         </Card.Body>
         </Card>

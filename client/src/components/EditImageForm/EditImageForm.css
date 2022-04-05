@@ -1,0 +1,57 @@
+
+.action-button{
+
+    font-family:'Quattrocento Sans';
+    min-width: 120px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: .1px;
+    outline: none;
+    border:none;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #6ec6ca;
+    background-color: transparent;
+    color:#1d3030;
+    transition: all 200ms ease-in-out;
+    margin-top: 15px;
+    margin-right: 25px;
+    margin-left: 25px;
+
+}
+
+
+
+.input{
+    display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+	
+}
+
+
+.input-label {
+	color: #8597a3;
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+}
+
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 1.125rem;
+	padding: 2.25rem 0;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #6658d3;
+			transform: translateY(-1.5rem);
+		}
+	}
+}

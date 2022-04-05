@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import { Form, Button, Row, Col } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 import { useNavigate, useParams } from 'react-router-dom'
 import imagesService from '../../services/images.services'
 import uploadService from '../../services/upload.services'
+
+import "./EditImageForm.css"
 
 const EditImageForm = () => {
 
@@ -13,7 +15,7 @@ const EditImageForm = () => {
 
     })
 
-    const { _id } = useParams()
+    const { id } = useParams()
 
     const { title, imageUrl} = imagesData
 
@@ -35,7 +37,7 @@ const EditImageForm = () => {
         setLoadingImage(true)
 
         const uploadData = new FormData()
-        uploadData.append('image', e.target.files[0])
+        uploadData.append('images', e.target.files[0])
 
         uploadService
             .uploadImage(uploadData)
@@ -43,7 +45,7 @@ const EditImageForm = () => {
                 setLoadingImage(false)
                 setImagesData({
                     ...imagesData,
-                    image: data.cloudinary_url
+                    images: data.cloudinary_url
                 })
             })
             .catch(err => console.log(err))
@@ -54,7 +56,7 @@ const EditImageForm = () => {
         e.preventDefault()
 
         imagesService
-            .editOneImage(_id, imagesData)
+            .editOneImage(id, imagesData)
             .then(({ data }) => {
                 console.log("se ha modificado la imagen", data)
                 navigate("/")
@@ -68,19 +70,22 @@ const EditImageForm = () => {
         <>
 
             <div className='card-form'>
+                
 
-                <Form class="card-form" onSubmit={handleSubmit} >
-                <div class="input">
+                <Form className="card-form" onSubmit={handleSubmit} >
+                <div className="input">
                     <input type="text" class="input-field" value={title} onChange={handleInputChange} name= 'title'/>
-                    <label class="input-label">Título</label>
+                    <label className="input-label">Título</label>
                 </div>
-                            <div class="input">
-                    <input type="url" class="input-field" value={imageUrl} onChange={uploadImage} name='imageUrl'/>
-                    <label class="input-label">Pega aqui el URL de la imagen</label>
+                <div className="input">
+                <Form.Group className="input" controlId="image">
+                <Form.Label className="input-label">Pega aqui el URL de la imagen</Form.Label>
+                <Form.Control class="input-field" type="url" onChange={uploadImage} name="image" />
+                </Form.Group>
                 </div>
 
-                <div class="action">
-                    <Button variant="light" type="submit">Modificar Imagen</Button> 
+                <div >
+                    <Button className='action-button'>Modificar Imagen</Button> 
                 </div>
                 </Form>
                 

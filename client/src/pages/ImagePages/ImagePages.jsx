@@ -35,24 +35,25 @@ const ImagePages = () => {
               <h1 className="Name" >Detalles de la imagen</h1>
               <hr />
               <Row>
-                <Col >
+                <Col className='name2' >
                     <h3>{imagesDetails.title}</h3>
                 </Col>
                 <Col>
-                    <img src={imagesDetails.imageUrl} alt={imagesDetails.title} />
+                    <img className='photo'src={imagesDetails.imageUrl} alt={imagesDetails.title} />
                 </Col>
             </Row>
 
+            <div className='space'>
             <Link to={`/modificarImagen/${imagesDetails._id}`}>
-              <Button variant="light">Editar Imagen</Button>
+              <Button className='Edit' variant="light">Editar Imagen</Button>
             </Link> 
 
-            <Button variant="light" onClick={deleteImage}>Borrar imagen</Button>
+            <Button className='Delete' variant="light" onClick={deleteImage}>Borrar imagen</Button>
               
             <Link to ='/'>
               <Button className="Button Volver">Volver</Button>
             </Link>
-              
+            </div>
 
 
           </Container>
