@@ -1,7 +1,11 @@
-import { Button, Card } from "react-bootstrap"
+import { Card, Button } from "react-bootstrap"
+import { Link } from 'react-router-dom'
 import "./ImageCard.css"
         
-const ImageCard = ({title, imageUrl}) => {
+const ImageCard = ({imageUrl, title, _id}) => {
+
+
+
 
     return (
 
@@ -9,9 +13,9 @@ const ImageCard = ({title, imageUrl}) => {
         <Card.Img variant="top"  className="Picture" src={imageUrl} />
         <Card.Body>
             <Card.Title className="Name">{title}</Card.Title>
-        
-            <Button className=" Edit">Editar</Button>
-            <Button className=" Delete">Eliminar</Button>
+            <Link to={`/detallesImagen/${_id}`}>
+            <Button className=" Detalles ">Ver detalles</Button>
+            </Link>
         </Card.Body>
         </Card>
     )

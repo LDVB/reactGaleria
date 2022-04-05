@@ -6,7 +6,7 @@ import "./NewImageForm.css"
 
 
 
-const NewImageForm = () => {
+const NewImageForm = ({closeModal, refresh}) => {
 
     const [imagesData, setImagesData] = useState({
 
@@ -36,7 +36,10 @@ const NewImageForm = () => {
 
         imagesService
             .saveImage(imagesData)
-            .then(({ data }) => {console.log (data)})
+            .then(({ data }) => {
+                closeModal()
+                refresh()
+            })
             .catch(err => console.log(err))
     }
 

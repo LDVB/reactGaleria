@@ -10,17 +10,22 @@ const Gallery = () => {
 
     const [images, setImages] = useState([])
     const [showModal, setShowModal] = useState(false)
+    
 
 
     useEffect(() => {
+        refreshImages()
+        
+    }, [])
+
+    const refreshImages =() => {
 
         imagesService
             .getAllImages()
             .then(({ data }) => setImages(data))
             .catch(err => console.log(err))
 
-    }, [])
-
+    }
     const handleModalClose =() => setShowModal(false)
     const handleModalOpen =() => setShowModal(true)
 
@@ -30,7 +35,7 @@ const Gallery = () => {
 
                 <h1 className="Name" >Añade tus fotos favorias! <span onClick={handleModalOpen}>+</span></h1>
                 <hr />
-                <ImageList images={images} />
+                <ImageList images={images}  />
 
             </Container>
 
@@ -41,7 +46,7 @@ const Gallery = () => {
                         <Modal.Title className="Title">Añadir Nueva Imagen</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <NewImageForm/>
+                        <NewImageForm closeModal={handleModalClose} refresh={refreshImages}/>
                     </Modal.Body>
                 </div>
             </Modal>

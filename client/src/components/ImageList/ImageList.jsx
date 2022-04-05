@@ -10,9 +10,9 @@ const ImageList = ({images}) => {
         <>
         {images.map(images => {
                 return (
-                    <div key={images._id}>
+                    <div >
                         <Row> 
-                            <Col > 
+                            <Col md={4} key={images._id} > 
                                 <ImageCard {...images}/>  
                             </Col> 
                         </Row>
