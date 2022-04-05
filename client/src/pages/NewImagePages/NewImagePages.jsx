@@ -2,6 +2,7 @@
 import { Container, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import NewImageForm from "../../components/NewImageForm/NewImageForm"
+import "./NewImagePages.css"
 
 const NewImagePages = () => {
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Form, Button} from 'react-bootstrap'
 import imagesService from '../../services/images.services'
+import "./NewImageForm.css"
 
 
 
@@ -41,24 +42,24 @@ const NewImageForm = () => {
 
 
     return (
-        <>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="title">
-                    <Form.Label>Título</Form.Label>
-                    <Form.Control type="text" value={title} onChange={handleImputChange} name= 'title'/>
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="imageUrl">
-                    <Form.Label>Url de la imagen</Form.Label>
-                    <Form.Control type="url" value={imageUrl} onChange={handleImputChange} name='imageUrl' />
-                </Form.Group>
-
-                <div className='d-grid gap-2'>
-                <Button type="submit">
-                    Guardar imagen
-                </Button>
-                </div>
-            </Form>
+        <>  
+            <div className='card-form'>
+           
+            <Form class="card-form" onSubmit={handleSubmit} >
+			<div class="input">
+				<input type="text" class="input-field" value={title} onChange={handleImputChange} name= 'title'/>
+				<label class="input-label">Título</label>
+			</div>
+						<div class="input">
+				<input type="url" class="input-field" value={imageUrl} onChange={handleImputChange} name='imageUrl'/>
+				<label class="input-label">Pega aqui el URL de la imagen</label>
+			</div>
+					
+			<div class="action">
+				<button class="action-button">Guardar imagen</button>
+			</div>
+		    </Form>
+            </div>
         </>
     )
 

@@ -10,8 +10,8 @@ const ImageCard = ({title, imageUrl}) => {
         <Card.Body>
             <Card.Title className="Name">{title}</Card.Title>
         
-            <Button className="Button Edit">Editar</Button>
-            <Button className="Button Delete">Eliminar</Button>
+            <Button className=" Edit">Editar</Button>
+            <Button className=" Delete">Eliminar</Button>
         </Card.Body>
         </Card>
     )
