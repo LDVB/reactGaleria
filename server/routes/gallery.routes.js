@@ -12,17 +12,18 @@ router.get('/getAllImages', (req, res) =>{
         .catch (err => res.status (500).json(err))
 })
 
-//detalles de una imagen
+//detalles de la imagen
 
-router.get('/getOneImage/:image_id', (req, res,) =>{
+router.get("/getOneImages/:id", (req, res, next) => {
 
-    const {image_id} = req.params
-
+    const { id } = req.params
+  
     Image
-        .findById (image_id)
-        .then (response =>  res.json (response))
-        .catch (err => res.status (500).json(err))
-})
+      .findById(id)
+      .then(response => res.json(response))
+      .catch(err => res.status(500).json(err))
+  });
+
 
 //guardamos una imagen nueva
 
@@ -38,24 +39,24 @@ router.post('/saveImage', (req, res,) =>{
 
 //modificamos una imagen
 
-router.put ('/modifyImage', (req, res) =>{
+router.put ('/modificar-imagen/:id', (req, res) =>{
 
-    const {title, imageUrl} = req.body
+    const { id } = req.params
 
     Image
-        .findByIdAndUpdate ({title, imageUrl})
+        .findByIdAndUpdate (id, req.body, { new: true })
         .then (response =>  res.json (response))
         .catch (err => res.status (500).json(err))
 })
 
 //eliminamos una imagen
 
-router.delete ('/deleteImage', (req, res) =>{
+router.delete ('/deleteImage/:id', (req, res) =>{
 
-    const {image_id} = req.params
+    const {id} = req.params
 
     Image
-        .findByIdAndDelete (image_id)
+        .findByIdAndDelete(id)
         .then (response =>  res.json (response))
         .catch (err => res.status (500).json(err))
 })
